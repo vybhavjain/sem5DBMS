@@ -1,0 +1,42 @@
+1) Data base
+A database (DB), in the most general sense, is an organized collection of data. More specifically, a database is an electronic system that allows data to be easily accessed, manipulated and updated.
+In other words, a database is used by an organization as a method of storing, managing and retrieving information. Modern databases are managed using a database management system (DBMS).
+
+2)data model
+A data model refers to the logical inter-relationships and data flow between different data elements involved in the information world. It also documents the way data is stored and retrieved. 
+
+3)Schema
+A schema is the structure behind data organization. It is a visual representation of how different table relationships enable the schema’s underlying mission business rules for which the database is created.
+
+
+4)Instance
+The data stored in database at a particular moment of time is called instance of database. 
+
+5)table
+It is a collection of related data stored in a structured format.It has rows and columns.
+
+6)view
+
+Definition - What does View mean?
+A view is a subset of a database that is generated from a query and stored as a permanent object. Although the definition of a view is permanent, the data contained therein is dynamic depending on the point in time at which the view is accessed. 
+
+
+7)Data definition language 
+A data definition language (DDL) is a computer language used to create and modify the structure of database objects in a database. These database objects include views, schemas, tables, indexes, etc. 
+
+
+8)Query
+A query is a request for data or information from a database table or combination of tables. 
+
+9)Data manipulation language
+A data manipulation language (DML) is a family of computer languages including commands permitting users to manipulate data in a database. This manipulation involves inserting data into database tables, retrieving existing data, deleting data from existing tables and modifying existing data. DML is mostly incorporated in SQL databases.
+
+10)Relation model
+ it is a method of structuring data using relations, which are grid-like mathematical structures consisting of columns and rows.
+
+11)ER model
+An entity-relationship model (ERM) is a theoretical and conceptual way of showing data relationships in software development. ERM is a database modeling technique that generates an abstract diagram or visual representation of a system’s data that can be helpful in designing a relational database. These diagrams are known as entity-relationship diagrams, ER diagrams or ERDs.
+
+
+
+

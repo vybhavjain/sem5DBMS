@@ -1,0 +1,157 @@
+L> select * from employee
+  2  
+SQL> select * from employee;
+
+       SSN NAME 		    DEPTNO
+---------- -------------------- ----------
+	 6 vybhav			 2
+	 8 rahul			 3
+	 1 karthik			 8
+	 2 sourabh			 3
+	 4 samrat			 9
+	 5 meeraj			 1
+
+6 rows selected.
+
+SQL> select * from project;
+
+no rows selected
+
+SQL> select * from assigned_to;
+select * from assigned_to
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL>     FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+SP2-0734: unknown command beginning "FOREIGN KE..." - rest of line ignored.
+SQL> create table assigned_to(USN integer primary key,projectno int foreign key referenes project(projectno));
+create table assigned_to(USN integer primary key,projectno int foreign key referenes project(projectno))
+                                                               *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> insert into project values(5,'ML');
+
+1 row created.
+
+SQL> select * from project;
+
+PROJECTNO	     PROJECTAREA
+-------------------- --------------------
+5		     ML
+
+SQL> create table assigned_to(USN integer primary key,projectno int foreign key referenes project(projectno));
+create table assigned_to(USN integer primary key,projectno int foreign key referenes project(projectno))
+                                                               *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table assigned_to(USN int primary key, projno int foreign key referenes project(projectno));
+create table assigned_to(USN int primary key, projno int foreign key referenes project(projectno))
+                                                         *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table assigned_to(USN int primary key, projectno int not null);
+
+Table created.
+
+SQL> select * from assigned_to;
+
+no rows selected
+
+SQL> alter table assigned_to add foreign key (projectno) references project(projectno);
+alter table assigned_to add foreign key (projectno) references project(projectno)
+                                         *
+ERROR at line 1:
+ORA-02267: column type incompatible with referenced column type
+
+
+SQL> desc project;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PROJECTNO				   NOT NULL VARCHAR2(20)
+ PROJECTAREA					    VARCHAR2(20)
+
+SQL> drop table assigned_to;
+
+Table dropped.
+
+SQL> create table assigned_to(USN int primary key, projno varchar(20) foreign key referenes project(projectno));
+create table assigned_to(USN int primary key, projno varchar(20) foreign key referenes project(projectno))
+                                                                 *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table assigned_to(USN int primary key, projno varchar2(20) foreign key referenes project(projectno));
+create table assigned_to(USN int primary key, projno varchar2(20) foreign key referenes project(projectno))
+                                                                  *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table assigned_to(USN int primary key, projectno varchar2(20) foreign key referenes project(projectno));
+create table assigned_to(USN int primary key, projectno varchar2(20) foreign key referenes project(projectno))
+                                                                     *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table assigned_to(USN int primary key, projectno varchar2(20) referenes project(projectno));
+create table assigned_to(USN int primary key, projectno varchar2(20) referenes project(projectno))
+                                                                     *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table assigned_to(USN int primary key, projectno varchar2(20) refereneces project(projectno));
+create table assigned_to(USN int primary key, projectno varchar2(20) refereneces project(projectno))
+                                                                     *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table assigned_to(USN int primary key, projectno varchar2(20) constraint foreign key (projectno) references project(projectno));
+create table assigned_to(USN int primary key, projectno varchar2(20) constraint foreign key (projectno) references project(projectno))
+                                                                     *
+ERROR at line 1:
+ORA-02253: constraint specification not allowed here
+
+
+SQL> create table assigned_to(USN int primary key, projectno varchar2(20) foreign key (projectno) references project(projectno));
+create table assigned_to(USN int primary key, projectno varchar2(20) foreign key (projectno) references project(projectno))
+                                                                     *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table assigned_to(USN int primary key, projectno varchar2(20) references project(projectno));
+
+Table created.
+
+SQL> select * from project
+  2  
+SQL> select * from project;
+
+PROJECTNO	     PROJECTAREA
+-------------------- --------------------
+5		     ML
+
+SQL> insert into assigned_to values(12,'6');
+insert into assigned_to values(12,'6')
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (IS170.SYS_C0013670) violated - parent key not
+found
+
+
+SQL> insert into assigned_to values(12,'5');
+
+1 row created.
+
